@@ -8,13 +8,18 @@
 <body>
     <!--какую страницу авторизацию, или регистрации,  или личный кабинет -->
     <?php 
-    if (htmlspecialchars($_COOKIE["action"]) == 'registration_succesful'){// проверку хеша
-        header('Location: login.php');   
-    }
-    else{
-        header('Location: registration.php');
+require_once 'C:\ospanel\domains\SPD121\config.php';
 
-    }
+    if (!!($_SESSION['user_id']??false)) {?>
+<!-- отображать личный кабинет-->
+<h1>Welcome back</h1>
+<?php   }
+
+    else if (htmlspecialchars($_COOKIE["action"]) == 'registration_succesful'){// проверку хеша
+        header('Location:pages/auth/login.php');   
+    }else{
+    header('Location: pages/registration/registration.php');}
+
     ?>
 </body>
 </html>
