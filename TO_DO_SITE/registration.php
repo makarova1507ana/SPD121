@@ -6,10 +6,10 @@
     <title>REGISTRATION PAGE</title>
 </head>
 <body>
-<form method="post" action="do_register.php">
-    <label><input type="text" id="username" name="username"> username</label> <br>
-    <label><input type="password" id="password" name="password"> password</label> <br>
-    <label><input type="file" id="avatar_img" name="avatar_img"> avatar</label> <br>
+<form method="post" action="do_register.php" enctype="multipart/form-data">
+    <label>username:<input type="text" id="username" name="username"> </label> <br>
+    <label>password:<input type="password" id="password" name="password"> </label> <br>
+    <label>avatar:<input type="file" id="avatar_img" name="avatar_img"> </label> <br>
     <input type="submit" value="Register">
     </form>
 </body>
