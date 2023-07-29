@@ -7,13 +7,7 @@ if (!($sqlrequest->rowCount())){
     die;
 }
 $user = $sqlrequest->fetch(PDO::FETCH_ASSOC);
-echo $_POST['password'];
-$p = 'p' ;
-$hash = password_hash('p', PASSWORD_DEFAULT);
-if (password_verify($p,$hash)){//$_POST['password'], $user['password'])){
-    echo 'ok';
 
-}
 if (password_verify($_POST['password'], $user['password'])){
     $_SESSION['user_id']=$user['id'];
     header('Location: ../../index.php');

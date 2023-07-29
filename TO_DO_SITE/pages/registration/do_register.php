@@ -23,9 +23,10 @@ function is_correct_file(){
         echo "size should be 5 MB or lower";
         die; //остановка выполнения дальнейшего скрипта
     }
-
+    
+    //Подумать над изменение названия изображения на сервере
     if (move_uploaded_file($_FILES['avatar_img']['tmp_name'], $upload_filename)){
-        return $upload_filename;
+        return basename($_FILES['avatar_img']['name']);
     }
     echo 'smth wrong';
     die;
